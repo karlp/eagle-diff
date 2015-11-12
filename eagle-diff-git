@@ -12,5 +12,5 @@ grep '.sch$' <<< $2 && DPI=100
 grep '.brd$' <<< $2 && DPI=600
 
 eagle-diff -f -d $DPI $2 $5
-APP=$(xdg-mime query default image/png | sed s/.desktop$//)
+APP=$(xdg-mime query default image/png | sed s/.desktop.*$//)
 $APP eagle_diff/*.png
